@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:id="@+id/mapRoot">
+        <TextView
+            android:id="@+id/mapCityNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="primaryTextColor"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mapLatitudeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="primaryTextColor"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/mapLongitudeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="primaryTextColor"
+            android:textSize="18sp" />
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            map:uiZoomControls="true"
+            map:uiScrollGestures="true"
+            android:layout_height="650dp" />
+    </LinearLayout>
+</ScrollView>

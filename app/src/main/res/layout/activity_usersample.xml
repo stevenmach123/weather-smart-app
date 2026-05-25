@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status Message."
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/userTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No sampleUser loaded."
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/userIdEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="userId"
+        android:inputType="text"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        android:inputType="text"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insert User" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update User" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete User By ID" />
+
+    <Button
+        android:id="@+id/getUserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get User By ID" />
+
+    <Button
+        android:id="@+id/randomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Random User" />
+
+    <Button
+        android:id="@+id/randomAndInsertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Random User And Insert User" />
+
+</LinearLayout>

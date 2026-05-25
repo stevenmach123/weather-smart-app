@@ -1,0 +1,44 @@
+# Setup LLM Prompt Test Environment
+
+1. Create and activate conda environment:
+- conda create -n llm-prompt-test python=3.12 -y
+- conda activate llm-prompt-test
+
+2. Install dependencies:
+- pip install -r requirements.txt
+
+3. Set environment variable
+- In folder root, create .env file with following content:
+    hf_token1=your_huggingface_token_here 
+
+
+
+# Set up Hugging Face access token
+
+1. Create account:
+https://huggingface.co/
+
+2. Generate token:
+- https://huggingface.co/settings/tokens 
+- or, when on Dashboard `https://huggingface.co/settings/profile`, select `Access Tokens`
+- Make sure the token has all required permissions  under `User Permissions`
+
+# Run Program 
+
+- cd app/src/test/java/edu/uiuc/cs427app/llm-prompt-test
+- Then, run command `python index.py` 
+- or, click IDE python console. Since it's not part Android code, you can open in other IDE or VSCode
+
+
+# Switching models (Hugging Face) (Optional)
+
+- If the model output is not compatible or not good.
+Go to: 
+https://huggingface.co/
+Then:
+- Use search bar or click "Models"
+- Select a model
+- Once in specific model introduction page > Click `Use this model`, can be found on right  > find "Interface Provider"  > Choose available provider sdk
+Note:
+- Not all models have Interface Provider option
+- Options may differ depending on the model

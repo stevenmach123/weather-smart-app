@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local machine config
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Android generated/native build folders
+.externalNativeBuild/
+.cxx/
+
+# Captures
+captures/
+
+# Keystore files
+*.jks
+*.keystore

@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+def localProperties = new Properties()
+def room_version = "2.4.3"
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+android {
+    namespace "edu.uiuc.cs427app"
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "edu.uiuc.cs427app"
+        minSdk 29
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "WEATHER_INFO_API_KEY", "\"${localProperties['WEATHER_INFO_API_KEY']}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+
+        // Allows for recreating the database on app startup.
+        // Open View -> Tool Windows -> Build Variants and select debug as the Active Build Variant.
+        buildConfig true
+    }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/INDEX.LIST', 'META-INF/DEPENDENCIES']
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.test.espresso:espresso-intents:3.7.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:core:1.7.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.7.0'
+
+
+    // Room dependency for Android database
+      implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-guava:$room_version"
+    implementation "com.google.guava:guava:31.0.1-android"
+    implementation "androidx.concurrent:concurrent-futures:1.1.0"
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    // Retrofit2 dependency for external API calls
+    implementation "com.squareup.retrofit2:retrofit:3.0.0"
+    implementation "com.squareup.retrofit2:converter-gson:3.0.0"
+    implementation "com.squareup.retrofit2:adapter-guava:3.0.0"
+    compileOnly "org.projectlombok:lombok:1.18.30"
+    annotationProcessor "org.projectlombok:lombok:1.18.30"
+
+    // Gemini
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+    implementation("com.google.guava:guava:31.0.1-android")
+    // Google maps
+    implementation('com.google.maps:google-maps-addressvalidation:0.82.0')
+    implementation("com.google.android.gms:play-services-maps:20.0.0")
+    implementation platform('com.google.cloud:libraries-bom:26.78.0')
+
+    implementation 'io.grpc:grpc-okhttp:1.80.0'
+    implementation 'io.grpc:grpc-android:1.80.0'
+}
